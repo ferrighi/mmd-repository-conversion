@@ -31,4 +31,4 @@ for dotslashmmdpath in $(cd $1 && find . -type f); do
 	#xmllint --schema /home/laraf/Programs/mmd/xsd/mmd.xsd --noout $2/$mmdpath
 done
 
-#rm $tempmmdxsd
+rm $tempmmdxsd
