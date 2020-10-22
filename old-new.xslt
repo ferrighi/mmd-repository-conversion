@@ -187,7 +187,7 @@
                  </xsl:element>
                  </xsl:element>
               </xsl:if>
-              <xsl:if test=". = 'Something'">
+              <xsl:if test=". = 'Free'">
                  <xsl:element name="mmd:use_constraint">
                  <xsl:element name="mmd:identifier">
                     <xsl:text>CC-BY-4.0</xsl:text>
