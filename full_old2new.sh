@@ -20,6 +20,7 @@ echo "Downloading latest schema file"
 tempmmdxsd=$(tempfile)_mmd.xsd
 curl https://raw.githubusercontent.com/metno/mmd/master/xsd/mmd.xsd -o $tempmmdxsd
 
+echo "Downloading latest xslt file" 
 curl https://raw.githubusercontent.com/metno/mmd/master/xslt/mmdv2-to-mmdv3.xsl -o $3/mmdv2-to-mmdv3.xsl
 
 echo "Looping over XML files under $1 and generating new XMLs under $2"
@@ -27,8 +28,8 @@ for dotslashmmdpath in $(cd $1 && find . -type f); do
 	mmdpath=${dotslashmmdpath#./}
 	mkdir -p $2/$(dirname $mmdpath)
 	xsltproc $3/old-new.xslt $1/$mmdpath > $2/$mmdpath
-	xmllint --schema $tempmmdxsd --noout $2/$mmdpath
-	#xmllint --schema /home/laraf/Programs/mmd/xsd/mmd.xsd --noout $2/$mmdpath
+	#xmllint --schema $tempmmdxsd --noout $2/$mmdpath
+	xmllint --schema /home/laraf/Programs/mmd/xsd/mmd.xsd --noout $2/$mmdpath
 done
 
 rm $tempmmdxsd
