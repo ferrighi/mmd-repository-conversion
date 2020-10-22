@@ -177,6 +177,7 @@
         </xsl:template>
 
         <xsl:template match="mmd:use_constraint" mode="custom">
+	      <!--AROME-Arctic-YOPP-Supersite-->
               <xsl:if test=". = 'https://www.met.no/en/free-meteorological-data/Licensing-and-crediting'">
                  <xsl:element name="mmd:use_constraint">
                  <xsl:element name="mmd:identifier">
@@ -187,6 +188,7 @@
                  </xsl:element>
                  </xsl:element>
               </xsl:if>
+	      <!--TEMP data-->
               <xsl:if test=". = 'Free'">
                  <xsl:element name="mmd:use_constraint">
                  <xsl:element name="mmd:identifier">
